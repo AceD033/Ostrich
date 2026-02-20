@@ -238,3 +238,7 @@ footer {
         font-size: 40px;
     }
 }
+img.logo {
+    width: 260px;
+    height: 80px; 
+}
