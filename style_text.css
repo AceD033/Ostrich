@@ -59,6 +59,13 @@ nav a:hover {
     padding: 60px 20px 40px 20px;
 }
 
+.hero-image {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
 .hero h2 {
     font-size: 2.2rem;
     margin-bottom: 12px;
@@ -238,3 +245,10 @@ footer {
         font-size: 40px;
     }
 }
+img.logo {
+    width: 260px;
+    height: 80px; 
+    
+}
+
+    
