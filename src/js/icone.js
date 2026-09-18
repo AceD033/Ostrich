@@ -1,5 +1,18 @@
 const burger = document.querySelector('.burger-menu');
 const menu = document.querySelector('.menu');
+const themeToggle = document.querySelector('.theme-toggle');
+
+if (themeToggle) {
+  const savedTheme = localStorage.getItem('ostrich-theme');
+  if (savedTheme === 'light') {
+    document.body.classList.add('theme-light');
+  }
+
+  themeToggle.addEventListener('click', () => {
+    const isLight = document.body.classList.toggle('theme-light');
+    localStorage.setItem('ostrich-theme', isLight ? 'light' : 'dark');
+  });
+}
 
 if (burger && menu) {
   burger.addEventListener('click', () => {
@@ -14,17 +27,3 @@ if (burger && menu) {
     });
   });
 }
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        const target = document.querySelector(this.getAttribute('href'));
-
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});

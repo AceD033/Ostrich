@@ -4,23 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ostrich | Support</title>
-    <link rel="icon" type="image/png" href="ostrich.jpg">
-    <link rel="stylesheet" href="style_text.css">
-    <link rel="stylesheet" href="mobile.css">
+    <link rel="icon" type="image/png" href="../assets/images/ostrich.jpg">
+    <link rel="stylesheet" href="../css/style_text.css">
+    <link rel="stylesheet" href="../css/mobile.css">
 </head>
 <body>
     <header>
-        <img src="image_2026-02-20_09-54-26.png" alt="Ostrich logo" class="logo">
-        <button class="burger-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+        <img src="../assets/images/image_2026-02-20_09-54-26.png" alt="Ostrich logo" class="logo">
+        <div class="header-actions">
+            <button class="theme-toggle" type="button" aria-label="Toggle theme">
+                <span class="toggle-thumb"></span>
+            </button>
+            <button class="burger-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
         <nav class="menu" id="main-menu">
             <a href="index.html">Home</a>
-            <a href="index.html#features">Possibilities</a>
+            <a href="faq.html">FAQ</a>
             <a href="help.html">Support</a>
-            <a href="#">History</a>
+            <a href="news.html">News</a>
         </nav>
     </header>
 
@@ -51,30 +56,10 @@
             </article>
         </section>
 
-        <section class="faq" aria-label="Frequently asked questions">
-            <h2>Frequently asked questions</h2>
-            <div class="faq-grid">
-                <article class="faq-item">
-                    <h3>Is Ostrich really anonymous?</h3>
-                    <p>Yes. The platform is designed to avoid personal identification and keep the interaction minimal and private.</p>
-                </article>
-
-                <article class="faq-item">
-                    <h3>Can I use it on the web?</h3>
-                    <p>Yes. The web version is available from any browser and works quickly on desktop and mobile devices.</p>
-                </article>
-
-                <article class="faq-item">
-                    <h3>Do I need to register?</h3>
-                    <p>Usually not. The main goal is to keep access quick and without unnecessary personal data.</p>
-                </article>
-            </div>
-        </section>
-
         <section class="contact-box">
             <h2>Need more help?</h2>
             <p>If your question is not here, please contact the support team and we will respond as quickly as possible.</p>
-            <a href="" class="btn">Contact support</a>
+            <a href="mailto:support@ostrich.app" class="btn">Contact support</a>
         </section>
     </main>
 
@@ -82,6 +67,6 @@
         © 2026 Ostrich Messenger. All rights reserved.
     </footer>
 
-    <script src="icone.js" defer></script>
+    <script src="../js/icone.js" defer></script>
 </body>
 </html>
