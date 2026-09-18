@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+header {
+    background: #000;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #222;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+body {
+    background: #111;
+    color: #fff;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+header h1 {
+    margin: 0 0 8px 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+nav {
+    margin-top: 8px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 18px;
+    font-size: 1.1rem;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+}
+nav a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px 40px 20px;
+}
+
+.hero-image {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 32px;
+    color: #ccc;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.btn {
+    background: #fff;
+    color: #111;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.btn:hover {
+    background: #111;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.features {
+    background: #181818;
+    padding: 48px 0 40px 0;
+    text-align: center;
+}
+
+.features h3 {
+    font-size: 1.7rem;
+    margin-bottom: 32px;
+}
+
+.feature-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background: #222;
+    border-radius: 18px;
+    padding: 28px 24px;
+    min-width: 220px;
+    max-width: 260px;
+    margin: 8px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+.feature h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+}
+.feature p {
+    color: #bbb;
+    margin: 0;
+}
+
+footer {
+    background: #000;
+    color: #888;
+    text-align: center;
+    padding: 18px 0 12px 0;
+    font-size: 0.95rem;
+    margin-top: 40px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #aaa;
+}
+
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero h2 {
+    font-size: 60px;
+    letter-spacing: 5px;
+}
+
+.hero p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #ccc;
+    max-width: 600px;
+}
+
+.buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn {
+    padding: 15px 35px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid white;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background: black;
+    color: white;
+}
+
+.features {
+    padding: 80px 20px;
+    text-align: center;
+    border-top: 1px solid #fff;
+}
+
+.features h3 {
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.feature-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.feature {
+    max-width: 250px;
+}
+
+.feature h4 {
+    margin-bottom: 15px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #fff;
+    font-size: 14px;
+    color: #aaa;
+}
+
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 40px;
+    }
+}
+img.logo {
+    width: 260px;
+    height: 80px; 
+}
