@@ -388,4 +388,12 @@ img.logo {
     width: 260px;
     height: 80px;
 }
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
+footer {
+    margin-top: auto;
+}
