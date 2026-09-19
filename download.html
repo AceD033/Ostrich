@@ -14,8 +14,16 @@
       <img src="./images/image_2026-02-20_09-54-26.png" alt="Ostrich logo" class="logo">
     </a>
     <div class="header-actions">
-      <button class="theme-toggle" type="button" aria-label="Toggle theme">
-        <span class="toggle-thumb"></span>
+      <button class="theme-toggle" id="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Switch to light theme">
+        <span class="tt-thumb" aria-hidden="true">
+          <svg class="tt-icon tt-icon-moon" viewBox="0 0 24 24">
+            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/>
+          </svg>
+          <svg class="tt-icon tt-icon-sun" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4.2"/>
+            <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6-1.6"/>
+          </svg>
+        </span>
       </button>
       <button class="burger-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-menu">
         <span></span>
