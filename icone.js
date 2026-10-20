@@ -118,7 +118,9 @@ if (burger && menu) {
     fetch(form.action, {
       method: 'POST',
       body: new FormData(form),
-      headers: { Accept: 'application/json' }
+      headers: { Accept: 'application/json' },
+      /* FormSubmit отклоняет запросы, где Referer — только домен без пути */
+      referrerPolicy: 'no-referrer-when-downgrade'
     }).then(function (res) {
       if (!res.ok) throw new Error();
       return res.json();
