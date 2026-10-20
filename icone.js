@@ -111,12 +111,7 @@ if (burger && menu) {
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    /* Адрес формы задаётся в атрибуте action в ideas.html */
-    if (form.action.indexOf('YOUR_FORM_ID') !== -1) {
-      setStatus('The form is not connected yet. Please try again later.', 'error');
-      return;
-    }
-
+    /* Адрес формы задаётся в атрибуте action в ideas.html (FormSubmit → support@ostrich-messenger.com) */
     submit.disabled = true;
     setStatus('Sending…', '');
 
@@ -126,6 +121,9 @@ if (burger && menu) {
       headers: { Accept: 'application/json' }
     }).then(function (res) {
       if (!res.ok) throw new Error();
+      return res.json();
+    }).then(function (data) {
+      if (!data || String(data.success) !== 'true') throw new Error();
       form.reset();
       updateMessage();
       setStatus('', '');
