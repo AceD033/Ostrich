@@ -55,7 +55,8 @@ if (burger && menu) {
   var touch = navigator.maxTouchPoints > 1;
 
   var os = null;
-  if (/Android|iPhone|iPad|iPod/i.test(ua) || (/Mac/i.test(platform) && touch)) os = 'mobile';
+  if (/Android/i.test(ua)) os = 'android';
+  else if (/iPhone|iPad|iPod/i.test(ua) || (/Mac/i.test(platform) && touch)) os = 'mobile';
   else if (/Win/i.test(platform) || /Windows/i.test(ua)) os = 'windows';
   else if (/Mac/i.test(platform) || /Mac OS X/i.test(ua)) os = 'mac';
   else if (/Linux|X11|CrOS/i.test(platform + ua)) os = 'linux';

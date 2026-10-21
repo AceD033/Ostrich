@@ -322,8 +322,16 @@ footer {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 28px;
+}
+
+/* 4 карточки: на средних экранах — сеткой 2×2 */
+@media (min-width: 1001px) and (max-width: 1240px) {
+  .downloads .download-container {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 820px;
+  }
 }
 
 .downloads .download-card {
@@ -1487,4 +1495,11 @@ body.theme-light .theme-btn-sun { opacity: 1; transform: none; }
 
     .repo-page .help-grid { gap: 14px; margin-top: 18px; }
     .repo-page .help-card { padding: 18px 16px; }
+}
+
+.downloads .your-os { white-space: nowrap; }
+
+/* в одну колонку карточка текущей ОС идёт первой */
+@media (max-width: 1000px) {
+  .downloads .download-card.current-os { order: -1; }
 }
