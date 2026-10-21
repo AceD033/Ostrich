@@ -144,3 +144,31 @@ if (burger && menu) {
     message.focus();
   });
 })();
+
+(function () {
+  var card = document.getElementById('repo-card');
+  if (!card) return;
+
+  // Звёзды и форки подтягиваются с GitHub
+  fetch('https://api.github.com/repos/' + card.dataset.repo)
+    .then(function (res) {
+      if (!res.ok) throw new Error();
+      return res.json();
+    })
+    .then(function (data) {
+      card.querySelector('[data-stat="stars"]').textContent = data.stargazers_count;
+      card.querySelector('[data-stat="forks"]').textContent = data.forks_count;
+    })
+    .catch(function () {});
+
+  var copy = document.getElementById('repo-copy');
+  var cmd = document.getElementById('repo-clone-cmd');
+
+  copy.addEventListener('click', function () {
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText(cmd.textContent).then(function () {
+      copy.textContent = 'Copied';
+      setTimeout(function () { copy.textContent = 'Copy'; }, 1500);
+    });
+  });
+})();
