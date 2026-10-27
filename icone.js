@@ -65,17 +65,43 @@ if (burger && menu) {
     root.querySelector('.download-card[data-os="' + os + '"]').classList.add('current-os');
   }
 
-  /* Номер последнего релиза с GitHub */
+  /* Ссылки на файлы последнего релиза. Имена бывают с версией и без:
+     Ostrich-Linux.AppImage или Ostrich-Linux-1.5.15.AppImage.
+     Если GitHub не ответил, ссылки ведут на страницу релиза. */
   var release = root.querySelector('[data-release]');
-  if (release) {
-    fetch('https://api.github.com/repos/Skerpsh/Ostrich_Messenger/releases/latest')
-      .then(function (res) {
-        if (!res.ok) throw new Error();
-        return res.json();
-      })
-      .then(function (data) { release.textContent = data.tag_name; })
-      .catch(function () {});
+  var links = document.querySelectorAll('[data-asset]');
+
+  function findAsset(assets, name) {
+    var dot = name.lastIndexOf('.');
+    var stem = dot > 0 ? name.slice(0, dot) : name;
+    var ext = dot > 0 ? name.slice(dot) : '';
+    var exact = null;
+    var versioned = null;
+    assets.forEach(function (a) {
+      if (a.name === name) {
+        exact = a;
+        return;
+      }
+      var end = a.name.length - ext.length;
+      if (a.name.indexOf(stem + '-') !== 0 || a.name.slice(end) !== ext) return;
+      if (/^\d+(\.\d+)*$/.test(a.name.slice(stem.length + 1, end))) versioned = a;
+    });
+    return exact || versioned;
   }
+
+  fetch('https://api.github.com/repos/Skerpsh/Ostrich_Messenger/releases/latest')
+    .then(function (res) {
+      if (!res.ok) throw new Error();
+      return res.json();
+    })
+    .then(function (data) {
+      if (release) release.textContent = data.tag_name;
+      links.forEach(function (link) {
+        var a = findAsset(data.assets || [], link.dataset.asset);
+        if (a) link.href = a.browser_download_url;
+      });
+    })
+    .catch(function () {});
 
   /* macOS ещё в разработке: кнопка только показывает уведомление */
   var toast = document.getElementById('toast');
