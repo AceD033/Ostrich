@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ostrich</title>
 <link rel="icon" type="image/jpeg" href="./images/ostrich.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400&display=swap">
 <link rel="stylesheet" href="./style_text.css">
 <link rel="stylesheet" href="./mobile.css">
-
-
 </head>
-
 <body>
-<script>try{if(localStorage.getItem('ostrich-theme')==='light'){document.body.classList.add('theme-light');document.body.dataset.theme='light';}}catch(e){}</script>
+<script>try{var t=localStorage.getItem('ostrich-theme');if(t==='light'||(!t&&matchMedia('(prefers-color-scheme: light)').matches)){document.body.classList.add('theme-light');document.body.dataset.theme='light';}}catch(e){}</script>
 
 <header>
-    <a href="./index.html" class="home-link">Home</a>
+    <a href="./index.html" class="home-link"><img src="./images/ostrich.jpg" alt="" width="34" height="34"><span>Ostrich</span></a>
+    <nav class="menu" id="main-menu" aria-label="Main">
+        <a href="./faq.html">FAQ</a>
+        <a href="./help.html">Support</a>
+        <a href="./news.html">News</a>
+        <a href="./ideas.html">Ideas</a>
+        <a href="./repo.html">Repository</a>
+    </nav>
     <div class="header-actions">
         <button type="button" class="theme-btn" aria-label="Switch to light theme">
             <svg class="theme-btn-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13.4A8.5 8.5 0 1 1 10.6 3.5a6.6 6.6 0 0 0 9.9 9.9z"/></svg>
@@ -28,30 +34,38 @@
             <span></span>
         </button>
     </div>
-    <nav class="menu" id="main-menu">
-        <a href="faq.html">FAQ</a>
-        <a href="help.html">Support</a>
-        <a href="news.html">News</a>
-        <a href="ideas.html">Ideas</a>
-        <a href="repo.html">Repository</a>
-    </nav>
 </header>
 
+<main>
 <section class="hero">
-    <img src="./images/giuseppe_vector_bw.svg" alt="Giuseppe" class="hero-image">
-    <h2>Ostrich</h2>
-    <p>Anonymous. Fast. Secure.
-Chat without limits.
-    </p>
+    <h1 class="wordmark" aria-label="Ostrich"><span aria-hidden="true">Ostrıch</span></h1>
+    <svg class="giuseppe" viewBox="300 250 420 774" aria-hidden="true">
+        <g class="bird">
+        <path class="neck" d="M560 348C600 362 660 372 690 383C704 390 703 411 688 416C650 426 600 431 556 440C540 456 520 470 482 471C463 520 470 562 496 622C541 722 600 852 610 1024L455 1024C450 900 420 780 380 690C345 610 325 520 328 430C330 330 372 274 446 272C505 270 545 305 560 348Z"/>
+        <circle class="eye" cx="458" cy="358" r="25"/>
+        </g>
+    </svg>
+</section>
 
-    <div class="buttons">
-        <a href="https://ostrich-messenger.online" class="btn">Use on web</a>
-        <a href="download.html" class="btn">Download</a>
+<section class="intro">
+    <div>
+        <p class="intro-lead">A messenger that doesn’t ask who you are.</p>
+    </div>
+    <div class="intro-actions">
+        <a href="https://ostrich-messenger.online" class="btn">Open in browser</a>
+        <a href="./download.html" class="btn btn-quiet">Download</a>
     </div>
 </section>
 
+<ul class="promises">
+    <li><strong>No phone number</strong><span>Start a chat without a phone number, an email or a long sign-up.</span></li>
+    <li><strong>Private by default</strong><span>Messages are end-to-end encrypted, and we keep as little data as possible.</span></li>
+    <li><strong>Open source</strong><span>Every line of code is public, so anyone can check how it works.</span></li>
+</ul>
+</main>
+
 <footer>
-    © 2026 Ostrich Messenger. All rights reserved.
+    &copy; 2026 Ostrich Messenger. All rights reserved.
 </footer>
 
 <script src="./icone.js" defer></script>

@@ -65,7 +65,19 @@ if (burger && menu) {
     root.querySelector('.download-card[data-os="' + os + '"]').classList.add('current-os');
   }
 
-  /* Приложения ещё в разработке: кнопка только показывает уведомление */
+  /* Номер последнего релиза с GitHub */
+  var release = root.querySelector('[data-release]');
+  if (release) {
+    fetch('https://api.github.com/repos/Skerpsh/Ostrich_Messenger/releases/latest')
+      .then(function (res) {
+        if (!res.ok) throw new Error();
+        return res.json();
+      })
+      .then(function (data) { release.textContent = data.tag_name; })
+      .catch(function () {});
+  }
+
+  /* macOS ещё в разработке: кнопка только показывает уведомление */
   var toast = document.getElementById('toast');
   var toastTimer;
 
@@ -164,6 +176,20 @@ if (burger && menu) {
 
   var copy = document.getElementById('repo-copy');
   var cmd = document.getElementById('repo-clone-cmd');
+
+  copy.addEventListener('click', function () {
+    if (!navigator.clipboard) return;
+    navigator.clipboard.writeText(cmd.textContent).then(function () {
+      copy.textContent = 'Copied';
+      setTimeout(function () { copy.textContent = 'Copy'; }, 1500);
+    });
+  });
+})();
+
+(function () {
+  var copy = document.getElementById('cli-copy');
+  var cmd = document.getElementById('cli-cmd');
+  if (!copy || !cmd) return;
 
   copy.addEventListener('click', function () {
     if (!navigator.clipboard) return;

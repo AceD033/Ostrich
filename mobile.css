@@ -1,24 +1,110 @@
+@media (max-width: 860px) {
+  .burger-menu {
+    display: grid;
+  }
 
-@media (max-width: 1024px) {
-  .container {
-    width: 100%;
-    padding: 0 20px;
+  header nav.menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px var(--gutter) 20px;
+    background: var(--header);
+    border-bottom: 1px solid var(--line);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s linear 0.2s;
+  }
+
+  header nav.menu.menu-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  header nav.menu a {
+    padding: 12px 0;
+    border-radius: 0;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+
+  header nav.menu a:hover,
+  header nav.menu a[aria-current="page"] {
+    background: transparent;
+    color: var(--flush);
+  }
+
+  .giuseppe-peek {
+    right: 8px;
+    height: 130px;
+  }
+
+  .page-head > * {
+    padding-right: 64px;
+  }
+
+  .page-head > .giuseppe-peek {
+    padding-right: 0;
+  }
+
+  .intro {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .promises {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .topic,
+  .news-item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ideas-layout {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
-@media (max-width: 768px) {
-  .content {
-    width: 100%;
-    padding: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 22px;
+@media (max-width: 560px) {
+  .hero {
+    padding-top: 120px;
   }
 
-  .card {
-    flex: 1 1 100%;
+  .hero .giuseppe {
+    left: 50%;
+    height: 94%;
+  }
+
+  .intro-actions .btn {
+    flex: 1 1 auto;
+  }
+
+  .download-card {
+    grid-template-columns: 32px minmax(0, 1fr);
+    padding: 18px 12px;
+  }
+
+  .download-card .platform-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .main-download {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .repo-clone {
+    flex-wrap: wrap;
   }
 }
